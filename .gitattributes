@@ -1,7 +1,7 @@
-*.df text eol=lf
+*.gl text eol=lf
 *.glee text eol=lf
 
-*.df linguist-language=glee
+*.gl linguist-language=glee
 *.glee linguist-language=glee
 
 bundle/ linguist-vendored
