@@ -1,0 +1,177 @@
+//glee Example!
+use example;
+
+//HELLO WORLD!
+println("Hello World!"); //Semicolon is optional!
+
+//Functions
+
+fn hello(user) {
+    println("Hello " + user + "!");
+}
+
+//You can also add types!
+fn sum(x: Float, y: Float): Int {
+    return x + y;
+}
+
+//Values & Variables
+val name = "String XD"; // This is a constant string!
+println(name);
+
+mut val number = 1;
+number = 2;
+println(number); //This will print 2!
+
+//You can also type variables!
+val nickname: String = "Inteleonyx";
+
+//Conditions
+grade = 10;
+if (grade > 10) {
+    println("SUCH A NERD! CONGRATULATIONS");
+} elif (grade < 6) { //ELIF is else-if
+    println("YOU FAILED! STUDY MORE! :/");
+} elif (grade == 0) {
+    println("HOW IS THIS POSSIBLE? YOU FAILED");
+}
+else {
+    println("IDK PROBABLY YOU SCORED AN INVALID NUMBER :/");
+}
+
+switch (grade) {
+    case 1: {
+        println("FAILED");
+    }
+    case 2: {
+        println("FAILED");
+    }
+    case 10: {
+        println("YOU PASSED!");
+    }
+    default: {
+        println("THIS IS AN DEFAULT EXAMPLE");
+    }
+}
+
+//This is an infinite loop!
+loop {
+    println("WOW");
+}
+
+class Player {
+    private mut val name: String;
+    private mut val level: Int;
+
+    constructor(name: String, level: Int) {
+        this.name = name;
+        this.level = level;
+    }
+
+    fn setLevel(level) {
+        this.level = level;
+    }
+
+    fn levelUp(level: Int) {
+        level++;
+    }
+}
+
+//You can also extend a class!
+class PlayerWarrior : Player {
+    private mut val weapon;
+
+    constructor(name: String, age: Int, weapon) {
+        this.weapon = weapon;
+        super(name, age);
+        guide();
+    }
+
+    fn guide() {
+        println("This is a guide!");
+    }
+
+    fn attack() {
+        println(getName() + "attacks with " + weapon);
+    }
+}
+
+interface Movable {
+    abstract fn move(x,y);
+    abstract fn stop();
+}
+
+class MovablePlayer : Movable {
+    override fn move(x,y) {
+        println("I moved " + x.toString(), y.toString());
+    }
+
+    override fn stop(x,y) {
+        println("I stopped moving :/");
+    }
+}
+
+enum OnlineType {
+    OFFLINE,
+    ONLINE,
+    BUSY
+    AWAY
+}
+
+enum Ingredient {
+    LETTUCE("Lettuce")
+
+    private mut val name;
+    constructor(name) {
+        this.name = name
+    }
+}
+
+struct Example {
+    name: String
+    list: String[]
+}
+
+//Error handling
+try {
+    val connection = new DatabaseConnection();
+    connection.start();
+} catch error {
+    println(error);
+} finally {
+    println("IDK")
+}
+
+fn omg() throws Exception {
+    println("IDK")
+}
+
+//Annotation
+annotation Deprecated {
+    message: String,
+    ?newClass: Class //Use ? to mark as optional
+}
+
+@Deprecated("Deprecated use newFunction() instead")
+fn function() {
+    println("OH NO I'M DEPRECATED")
+}
+
+annotation Bad {} //Annotation can also be empty!
+
+@Bad
+fn thisIsABadFunction(): Bool {
+    return false;
+}
+
+//We support async functions!
+async fn command() {
+    await println("This is an async command!")
+}
+
+//Declaring packages (package.glee)
+package nameofthefolder;
+
+include nameofthefilewithoutextension;
+include math;
+include example;

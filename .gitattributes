@@ -1,0 +1,9 @@
+*.df text eol=lf
+*.glee text eol=lf
+
+*.df linguist-language=glee
+*.glee linguist-language=glee
+
+bundle/ linguist-vendored
+dist/ linguist-generated
+*.min.js linguist-generated
